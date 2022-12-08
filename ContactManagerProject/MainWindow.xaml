@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:ContactManagerProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="207,342,0,0" VerticalAlignment="Top" Height="35" Width="92"/>
+    <Grid Background="LightGreen">
+        <Button x:Name="AddContact" HorizontalAlignment="Left" Margin="263,380,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="AddContactDoubleClick" Content="Add Contact"/>
+        <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="26,19,0,0" TextWrapping="Wrap" Text="Contact Manager" VerticalAlignment="Top" Width="727" Height="33" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="ContactList" HorizontalAlignment="Left" Margin="26,83,0,0" TextWrapping="Wrap" Text="Your contact list is empty..." VerticalAlignment="Top" Width="727" Height="283" TextChanged="TextBox_TextChanged_1"/>
+        <Button HorizontalAlignment="Left" Margin="418,380,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="Button_Click" Content="Delete Contact"/>
+
 
     </Grid>
 </Window>
