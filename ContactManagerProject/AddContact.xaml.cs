@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace ContactManagerProject
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for AddContact.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AddContact : Window
     {
-        public Window1()
+        public AddContact()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
