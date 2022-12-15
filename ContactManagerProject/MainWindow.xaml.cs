@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +22,22 @@ namespace ContactManagerProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Gives me a place to store teh connection once I have it
+        public SqlConnection connection { get; set; }
+
+
+
         public MainWindow()
         {
+            
+            var ConString = ConfigurationManager.ConnectionStrings["LabConnection"].ConnectionString;
+            connection = new SqlConnection(ConString);
+
             // This shows the window.
             InitializeComponent();
+
         }
+        
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

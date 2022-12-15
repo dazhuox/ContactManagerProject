@@ -8,5 +8,12 @@ namespace ContactManagerProject
 {
     internal class Email
     {
+        public int id { get; }
+        public string EmailAddress { get; set; }
+
+        public Email()
+        {
+
+        }
     }
 }

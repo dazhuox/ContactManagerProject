@@ -8,5 +8,10 @@ namespace ContactManagerProject
 {
     internal class Type
     {
+        public string Description { get; set; }
+        public Type()
+        {
+
+        }
     }
 }
