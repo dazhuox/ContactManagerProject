@@ -9,7 +9,10 @@
     <Grid Background="LightGreen">
         <Button x:Name="AddContact" HorizontalAlignment="Left" Margin="263,380,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="AddContactDoubleClick" Content="Add Contact"/>
         <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="26,19,0,0" TextWrapping="Wrap" Text="Contact Manager" VerticalAlignment="Top" Width="727" Height="33" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="ContactList" HorizontalAlignment="Left" Margin="26,83,0,0" TextWrapping="Wrap" Text="Your contact list is empty..." VerticalAlignment="Top" Width="727" Height="283" TextChanged="TextBox_TextChanged_1"/>
+        <DataGrid x:Name="ContactList" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" Width="727" Height="283" AutoGenerateColumns="True">
+            
+
+        </DataGrid>
         <Button HorizontalAlignment="Left" Margin="418,380,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Delete Contact"/>
 
 

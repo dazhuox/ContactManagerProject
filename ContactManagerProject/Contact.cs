@@ -19,60 +19,29 @@ namespace ContactManagerProject
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
 
-        public Contact() 
+        public static DataTable All()
         {
-            //Create a SqlConnection to the Northwind database.
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
-                //Create a SqlDataAdapter for the Suppliers table.
-                SqlDataAdapter adapter = new SqlDataAdapter();
-
-                // A table mapping names the DataTable.
-                adapter.TableMappings.Add("Table", "Contact");
-
-                // Open the connection.
-                Console.WriteLine("The SqlConnection is open.");
-
-                // Create a SqlCommand to retrieve Suppliers data.
                 SqlCommand command = new SqlCommand("SELECT * FROM Contact;", connection);
-                command.CommandType = CommandType.Text;
 
-                // Set the SqlDataAdapter's SelectCommand.
-                adapter.SelectCommand = command;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
 
-                // Fill the DataSet.
-                DataSet dataSet = new DataSet("Contact");
-                adapter.Fill(dataSet);
+                DataTable dataTable = new DataTable("Contacts");
 
-                // Create a second Adapter and Command to get
-                // the Products table, a child table of Suppliers.
-                SqlDataAdapter addressAdapter = new SqlDataAdapter();
-                addressAdapter.TableMappings.Add("Table", "Address");
+                adapter.Fill(dataTable);
 
-                SqlCommand addressCommand = new SqlCommand("SELECT * FROM Address;", connection);
-                addressAdapter.SelectCommand = addressCommand;
+                adapter.Update(dataTable);
 
-                // Fill the DataSet.
-                addressAdapter.Fill(dataSet);
+                return dataTable;
 
-                // Close the connection.
-                connection.Close();
-                Console.WriteLine("The SqlConnection is closed.");
-
-                // Create a DataRelation to link the two tables
-                // based on the SupplierID.
-                DataColumn parentColumn =
-                    dataSet.Tables["Address"].Columns["Contact_ID"];
-                DataColumn childColumn =
-                    dataSet.Tables["Contact"].Columns["ID"];
-                DataRelation relation =
-                    new DataRelation("Address_Contact",
-                    parentColumn, childColumn);
-                dataSet.Relations.Add(relation);
-                Console.WriteLine(
-                    "The {0} DataRelation has been created.",
-                    relation.RelationName);
             }
+
+        }
+
+
+        public Contact() 
+        {
         }
 
     }

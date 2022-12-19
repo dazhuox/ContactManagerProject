@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -22,13 +23,16 @@ namespace ContactManagerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
+        public DataView Contacts { get; set; }
         public MainWindow()
         {
 
             // This shows the window.
             InitializeComponent();
+
+            Contacts = Contact.All().AsDataView();
+
+            ContactList.ItemsSource = Contacts;
 
         }
         
