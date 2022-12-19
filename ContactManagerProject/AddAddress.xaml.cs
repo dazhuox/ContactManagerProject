@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace ContactManagerProject
 {
     /// <summary>
-    /// Interaction logic for AddContact.xaml
+    /// Interaction logic for AddAddress.xaml
     /// </summary>
-    public partial class AddContact : Window
+    public partial class AddAddress : Window
     {
-        public AddContact()
+        public AddAddress()
         {
             InitializeComponent();
         }
 
-        private void AddAddressButton_Click(object sender, RoutedEventArgs e)
+        private void LastNameText_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

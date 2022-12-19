@@ -1,0 +1,47 @@
+﻿<Window x:Class="ContactManagerProject.UpdateAddress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactManagerProject"
+        mc:Ignorable="d"
+        Title="UpdateAddress" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="UpdatetheAddress" Content="Update Address" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"   FontSize="30"/>
+        <Button x:Name="UpdateAddressCancel" Content="Cancel"  Grid.Row="3" Margin="189,29,188,28" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button x:Name="AddressAdd" Content="Add Contact" Grid.Column="1"  Grid.Row="3" Margin="189,29,188,28" Grid.ColumnSpan="2"/>
+
+
+        <!--Second Row-->
+        <Label x:Name="StreetNumberLabel" Content="Street Number" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="StreetNumberText" HorizontalAlignment="Center" Margin="0,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Street Number..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center"/>
+
+        <Label x:Name="StreetNameLabel" Content="Street Name" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="SteetNameText" HorizontalAlignment="Left" Margin="65,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Street Name..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.Column="1"/>
+
+        <Label x:Name="TownLabel" Content="Town" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.Column="2"/>
+        <TextBox x:Name="TownText" HorizontalAlignment="Left" Margin="65,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Town..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.Column="2"/>
+
+        <!--Third Row-->
+        <Label x:Name="ProvinceStateLabel" Content="Province/State" HorizontalAlignment="Left" Margin="195,17,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="ProvinceStateText" HorizontalAlignment="Left" Margin="195,57,0,0" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Add Province/State..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+        <Label x:Name="ZipPostalLabel" Content="ZIP/Postal Code" HorizontalAlignment="Left" Margin="194,17,0,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="ZipPostalText" HorizontalAlignment="Left" Margin="194,57,0,0" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="Add ZIP/Postal Code..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+
+    </Grid>
+</Window>

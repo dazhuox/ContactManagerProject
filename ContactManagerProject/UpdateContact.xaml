@@ -21,8 +21,9 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="Title_update" Content="Update Contact" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"   FontSize="30"/>
-        <Button x:Name="UpdateButton" Content="Update Contact" Grid.Column="1"  Grid.Row="3" Margin="188,29,190,28" Grid.ColumnSpan="2"/>
-        <Button x:Name="UpdateAddressButton" Content="Update Address"  Grid.Row="3" Margin="189,29,189,28" Grid.ColumnSpan="2"/>
+        <Button x:Name="UpdateCancel" Content="Cancel"  Grid.Row="3" Margin="65,29,46,28" Grid.Column="0"/>
+        <Button x:Name="UpdateButton" Content="Update Contact" Grid.Column="2"  Grid.Row="3" Margin="60,29,51,28"/>
+        <Button x:Name="UpdateAddressButton" Content="Update Address"  Grid.Row="3" Margin="65,29,46,28" Grid.Column="1"/>
         <!--Second Row-->
         <Label x:Name="FirstNameLabel_update" Content="First Name" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="FirstNameText_update" HorizontalAlignment="Center" Margin="0,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Added First Name..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center"/>

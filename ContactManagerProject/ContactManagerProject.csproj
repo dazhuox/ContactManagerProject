@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddAddress.xaml.cs">
+      <DependentUpon>AddAddress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddContact.xaml.cs">
       <DependentUpon>AddContact.xaml</DependentUpon>
     </Compile>
@@ -66,9 +69,16 @@
     <Compile Include="Email.cs" />
     <Compile Include="Phone.cs" />
     <Compile Include="Type.cs" />
+    <Compile Include="UpdateAddress.xaml.cs">
+      <DependentUpon>UpdateAddress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateContact.xaml.cs">
       <DependentUpon>UpdateContact.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddContact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UpdateAddress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UpdateContact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
