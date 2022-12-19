@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,21 +17,31 @@ namespace ContactManagerProject
         public string Street { get; set; }
         public string AddressNumber { get; set; }
 
-        public Address(int id)
+        public static DataTable FindForContact(int contactId)
         {
             //Run sql to select id (looking through the sql query for the id)
+            using (SqlConnection connection = ((App)Application.Current).connection)
+            {
+                SqlCommand findAddressID = new SqlCommand("SELECT Address.ID, Address.Country, Address.City, Address.Street, Address.AddressNumber, Type.Description " +
+                    "FROM Address" +
+                    " JOIN Type ON Address.Type = Type.Code " +
+                    "WHERE Address.Contact_ID = @id;", connection);
 
-            SqlCommand findAddressID = new SqlCommand("SELECT * FROM ADDRESS WHERE ID = @id LIMIT 1 ;"
-                , ((App)Application.Current).connection );
+                findAddressID.Parameters.AddWithValue("@id", contactId);
 
-            findAddressID.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter adapter = new SqlDataAdapter(findAddressID);
 
-            SqlDataReader reader =  findAddressID.ExecuteReader();
+                DataTable dataTable = new DataTable("Addresses");
 
-            if (reader.HasRows) {
+                adapter.Fill(dataTable);
 
+                adapter.Update(dataTable);
+
+                return dataTable;
 
             }
+
+
         }
 
     }
