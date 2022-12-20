@@ -65,8 +65,8 @@ namespace ContactManagerProject
             DataRowView SelectedContact = ContactList.SelectedItem as DataRowView;
             int? contactID = SelectedContact.Row["ID"] as int?;
 
-            UpdateContact updateContact = new UpdateContact();
-            updateContact.ShowDialog();
+            AddContact addContact = new AddContact(contactID);
+            addContact.ShowDialog();
         }
     }
 }

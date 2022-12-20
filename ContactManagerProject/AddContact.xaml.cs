@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace ContactManagerProject
     /// </summary>
     public partial class AddContact : Window
     {
-        public AddContact()
+        public DataSet SingleContact { get; set; }
+
+        public AddContact(int? contactID = null)
         {
             InitializeComponent();
+
+            if (contactID != null)
+            {
+                int IntID = (int)contactID;
+
+                SingleContact = Contact.Find(IntID);
+            }
         }
 
         private void AddAddressButton_Click(object sender, RoutedEventArgs e)
