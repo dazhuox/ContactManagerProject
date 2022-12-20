@@ -15,7 +15,7 @@ namespace ContactManagerProject
             //Run sql to select id (looking through the sql query for the id)
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
-                SqlCommand command = new SqlCommand("SELECT Email.ID, Email.EmailAddress, " +
+                SqlCommand command = new SqlCommand("SELECT Email.Contact_ID, Email.ID, Email.EmailAddress, " +
                     "Type.Description FROM Email " +
                     "JOIN Type ON Email.Type = Type.Code " +
                     "WHERE Email.Contact_ID = @id ;", connection);

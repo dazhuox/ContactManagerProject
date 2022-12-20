@@ -22,7 +22,7 @@ namespace ContactManagerProject
             //Run sql to select id (looking through the sql query for the id)
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
-                SqlCommand findAddressID = new SqlCommand("SELECT Address.ID, Address.Country, Address.City, Address.Street, Address.AddressNumber, Type.Description " +
+                SqlCommand findAddressID = new SqlCommand("SELECT Address.Contact_ID, Address.ID, Address.Country, Address.City, Address.Street, Address.AddressNumber, Type.Description " +
                     "FROM Address" +
                     " JOIN Type ON Address.Type = Type.Code " +
                     "WHERE Address.Contact_ID = @id;", connection);
