@@ -12,10 +12,10 @@
         <Button x:Name="DeleteContact" HorizontalAlignment="Left" Margin="972,576,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Delete Contact"/>
         <Button x:Name="UpdateContact" HorizontalAlignment="Left" Margin="828,576,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Update Contact"/>
 
-        <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="42,43,0,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Width="728" Height="123" TextChanged="TextBox_TextChanged" FontSize="85"/>
+        <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="42,43,0,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Width="728" Height="123"  FontSize="85"/>
         <Ellipse x:Name="OwnPfp"  HorizontalAlignment="Left" Height="125" Margin="75,301,0,0" Stroke="Black" VerticalAlignment="Top" Width="125"/>
-        <TextBox x:Name="OwnProfile" HorizontalAlignment="Left" Margin="248,314,0,0" TextWrapping="Wrap" Text="My profile" VerticalAlignment="Top" Width="874" Height="112" TextChanged="TextBox_TextChanged_2" FontSize="50"/>
-        <TextBox x:Name="ContactsCount" HorizontalAlignment="Left" Margin="138,2422,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Width="808" Height="71" TextChanged="TextBox_TextChanged_3" FontSize="45"/>
+        <TextBox x:Name="OwnProfile" HorizontalAlignment="Left" Margin="248,314,0,0" TextWrapping="Wrap" Text="My profile" VerticalAlignment="Top" Width="874" Height="112"  FontSize="50"/>
+        <TextBox x:Name="ContactsCount" HorizontalAlignment="Left" Margin="138,2422,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Width="808" Height="71"  FontSize="45"/>
 
         <DataGrid x:Name="ContactList" HorizontalAlignment="Left" Margin="42,518,0,0" VerticalAlignment="Top" Width="1080" Height="1826" AutoGenerateColumns="False" MouseDoubleClick="ContactList_MouseDoubleClick" SelectionChanged="ContactList_SelectionChanged">
             <DataGrid.Columns>
