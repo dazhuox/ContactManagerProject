@@ -54,7 +54,9 @@ namespace ContactManagerProject
 
         private void AddContactDoubleClick(object sender, RoutedEventArgs e)
         {
-
+            AddContact addContact = new AddContact();
+            Visibility = Visibility.Collapsed;
+            addContact.Show();
         }
     }
 }

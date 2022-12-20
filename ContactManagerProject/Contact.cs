@@ -23,7 +23,7 @@ namespace ContactManagerProject
         {
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
-                SqlCommand command = new SqlCommand("SELECT LastName,FirstName,MiddleName FROM Contact;", connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM Contact;", connection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
