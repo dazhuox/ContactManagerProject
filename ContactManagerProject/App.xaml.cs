@@ -15,16 +15,16 @@ namespace ContactManagerProject
     public partial class App : Application
     {
         //Gives me a place to store teh connection once I have it
-        public SqlConnection connection { get; set; }
+        public SqlConnection connection {
+            get {
+                var ConString = ConfigurationManager.ConnectionStrings["ContactDatabase"].ConnectionString;
+                return new SqlConnection(ConString);
+            }
+        }
 
         public App()
         {
-            var ConString = ConfigurationManager.ConnectionStrings["ContactDatabase"].ConnectionString;
-            connection = new SqlConnection(ConString);
 
-            connection.Open();
-
-            Contact contact = new Contact();
         } 
 
     }

@@ -23,6 +23,9 @@ namespace ContactManagerProject
         {
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
+                connection.Open();
+
+
                 SqlCommand command = new SqlCommand("SELECT * FROM Contact;", connection);
 
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -49,6 +52,8 @@ namespace ContactManagerProject
 
             using (SqlConnection connection = ((App)Application.Current).connection)
             {
+                connection.Open();
+
                 SqlCommand command = new SqlCommand("SELECT TOP 1 Contact.*, ContactImage.Image FROM Contact " +
                     "LEFT JOIN ContactImage ON Contact.ContactImage_ID = ContactImage.ID " +
                     "WHERE Contact.ID = @id;", connection);
