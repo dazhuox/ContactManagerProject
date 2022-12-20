@@ -13,5 +13,10 @@ namespace ContactManagerProject
         {
             InitializeComponent();
         }
+
+        private void FirstNameText_update_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

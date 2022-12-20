@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactManagerProject"
         mc:Ignorable="d"
-        Title="UpdateAddress" Height="450" Width="800">
-    <Grid>
+        Title="UpdateAddress" Height="2532" Width="1170">
+    <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -14,34 +14,28 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="365"/>
+            <RowDefinition Height="332*"/>
+            <RowDefinition Height="865*"/>
+            <RowDefinition Height="954*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="UpdatetheAddress" Content="Update Address" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"   FontSize="30"/>
-        <Button x:Name="UpdateAddressCancel" Content="Cancel"  Grid.Row="3" Margin="189,29,188,28" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Button x:Name="AddressAdd" Content="Add Contact" Grid.Column="1"  Grid.Row="3" Margin="189,29,188,28" Grid.ColumnSpan="2"/>
-
+        <Button x:Name="UpdateCancel" Content="Cancel" Margin="12,11,195,256" Grid.Column="0" FontSize="45"/>
+        <Button x:Name="UpdateDone" Content="Done" Grid.Column="2" Margin="195,11,10,256" FontSize="45"/>
+        <Image x:Name="ContactImage" Grid.Column="1" HorizontalAlignment="Left" Height="250" Margin="76,43,0,0" VerticalAlignment="Top" Width="250"/>
+        <Button x:Name="AddContactImage" Grid.Column="1" Content="Add Photo" HorizontalAlignment="Center" Margin="0,312,0,0" VerticalAlignment="Top" Width="138" Height="20"/>
 
         <!--Second Row-->
-        <Label x:Name="StreetNumberLabel" Content="Street Number" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="StreetNumberText" HorizontalAlignment="Center" Margin="0,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Street Number..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center"/>
-
-        <Label x:Name="StreetNameLabel" Content="Street Name" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.Column="1"/>
-        <TextBox x:Name="SteetNameText" HorizontalAlignment="Left" Margin="65,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Street Name..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.Column="1"/>
-
-        <Label x:Name="TownLabel" Content="Town" HorizontalAlignment="Left" Margin="65,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.Column="2"/>
-        <TextBox x:Name="TownText" HorizontalAlignment="Left" Margin="65,57,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Add Town..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.Column="2"/>
+        <TextBox x:Name="FirstNameText_update" Grid.Row="1" TextWrapping="Wrap" Text="First Name" HorizontalContentAlignment="Center" TextChanged="FirstNameText_update_TextChanged" Margin="0,10,0,230" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="MiddleNameText_update" Margin="0,113,0,129" Grid.Row="1" TextWrapping="Wrap" Text="Middle Name" HorizontalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="LastNameText_update" Margin="0,222,0,27" Grid.Row="1" TextWrapping="Wrap" Text="Last Name" HorizontalContentAlignment="Center" Grid.ColumnSpan="3"/>
 
         <!--Third Row-->
-        <Label x:Name="ProvinceStateLabel" Content="Province/State" HorizontalAlignment="Left" Margin="195,17,0,0" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="ProvinceStateText" HorizontalAlignment="Left" Margin="195,57,0,0" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="Add Province/State..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
-
-        <Label x:Name="ZipPostalLabel" Content="ZIP/Postal Code" HorizontalAlignment="Left" Margin="194,17,0,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Height="25" Width="145" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="ZipPostalText" HorizontalAlignment="Left" Margin="194,57,0,0" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="Add ZIP/Postal Code..." VerticalAlignment="Top" Width="145" Height="34" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
-
+        <TextBox x:Name="PhoneNumberText_update" HorizontalAlignment="Center" Margin="0,38,0,716" Grid.Row="2" TextWrapping="Wrap" Text="Phone" Width="1170" HorizontalContentAlignment="Center" TextChanged="PhoneNumberText_update_TextChanged" Grid.Column="1" />
+        <TextBox x:Name="EmailText_update" HorizontalAlignment="Center" Margin="0,236,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="1170" Height="92" HorizontalContentAlignment="Center" TextChanged="EmailText_update_TextChanged" Grid.Column="1" />
+        <TextBox x:Name="SalutationText_update" HorizontalAlignment="Left" Margin="10,784,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Salutation" VerticalAlignment="Top" Width="1170" Height="81" HorizontalContentAlignment="Center" TextChanged="SalutationText_update_TextChanged" Grid.ColumnSpan="3" />
+        <TextBox x:Name="Address_update" HorizontalAlignment="Center" Margin="0,411,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="1170" Height="94" Grid.Column="1"/>
+        <Button Content="Delete Contact" Margin="0,685,0,0" Grid.Row="3" VerticalAlignment="Top" Height="74" Grid.ColumnSpan="3"/>
 
     </Grid>
 </Window>

@@ -68,5 +68,10 @@ namespace ContactManagerProject
             AddContact addContact = new AddContact(contactID);
             addContact.ShowDialog();
         }
+
+        private void ContactList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
