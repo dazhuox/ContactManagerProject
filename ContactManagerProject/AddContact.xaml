@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="Title" Content="Contact" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"   FontSize="30"/>
-        <Button x:Name="UpdateCancel" Content="Cancel" Margin="10,10,151,808" Grid.Column="0" Grid.RowSpan="2"/>
+        <Button x:Name="UpdateCancel" Content="Cancel" Margin="10,10,151,808" Grid.Column="0" Grid.RowSpan="2" Click="UpdateCancel_Click"/>
         <Button x:Name="AddButton" Content="Done" Grid.Column="2" Margin="132,5,6,5"/>
 
         <!--Second Row-->

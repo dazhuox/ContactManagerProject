@@ -39,5 +39,6 @@ namespace ContactManagerProject
         {
             this.Close();
         }
+
     }
 }
