@@ -55,9 +55,18 @@ namespace ContactManagerProject
         private void AddContactDoubleClick(object sender, RoutedEventArgs e)
         {
             AddContact addContact = new AddContact();
-            Visibility = Visibility.Collapsed;
-            this.Close();
+
             addContact.ShowDialog();
+        }
+
+        private void ContactList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ContactList.SelectedItem == null) return;
+            DataRowView SelectedContact = ContactList.SelectedItem as DataRowView;
+            int? contactID = SelectedContact.Row["ID"] as int?;
+
+            UpdateContact updateContact = new UpdateContact();
+            updateContact.ShowDialog();
         }
     }
 }

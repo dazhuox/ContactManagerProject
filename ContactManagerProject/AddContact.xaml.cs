@@ -34,5 +34,10 @@ namespace ContactManagerProject
         {
 
         }
+
+        private void UpdateCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

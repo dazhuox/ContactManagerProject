@@ -17,5 +17,10 @@ namespace ContactManagerProject
             //SingleContact = Contact.Find(1).AsDataView();
 
         }
+
+        private void UpdateCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

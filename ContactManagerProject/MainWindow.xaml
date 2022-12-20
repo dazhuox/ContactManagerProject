@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="LightGreen">
-        <Button x:Name="AddContact" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="AddContactDoubleClick" Content="Add Contact"/>
-        <Button x:Name="DeleteContact" HorizontalAlignment="Left" Margin="506,380,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Delete Contact"/>
-        <Button x:Name="UpdateContact" HorizontalAlignment="Left" Margin="206,380,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Update Contact"/>
+        <Button x:Name="AddContact" HorizontalAlignment="Left" Margin="198,380,0,0" VerticalAlignment="Top" Height="35" Width="92" Click="AddContactDoubleClick" Content="Add Contact"/>
+        <Button x:Name="DeleteContact" HorizontalAlignment="Left" Margin="452,380,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Delete Contact"/>
 
         <TextBox x:Name="Title" HorizontalAlignment="Left" Margin="26,19,0,0" TextWrapping="Wrap" Text="Contact Manager" VerticalAlignment="Top" Width="727" Height="33" TextChanged="TextBox_TextChanged"/>
-        <DataGrid x:Name="ContactList" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" Width="727" Height="283" AutoGenerateColumns="False" >
+        <DataGrid x:Name="ContactList" HorizontalAlignment="Left" Margin="26,84,0,0" VerticalAlignment="Top" Width="727" Height="283" AutoGenerateColumns="False" MouseDoubleClick="ContactList_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Salutation}" Header="Salutation"/>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name"/>

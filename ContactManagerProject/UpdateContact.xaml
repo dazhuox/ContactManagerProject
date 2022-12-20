@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Label x:Name="Title_update" Content="Update Contact" Grid.ColumnSpan="3" HorizontalContentAlignment="Center"   FontSize="30"/>
-        <Button x:Name="UpdateCancel" Content="Cancel"  Grid.Row="3" Margin="65,29,46,28" Grid.Column="0"/>
+        <Button x:Name="UpdateCancel" Content="Cancel"  Grid.Row="3" Margin="65,29,46,28" Grid.Column="0" Click="UpdateCancel_Click"/>
         <Button x:Name="UpdateButton" Content="Update Contact" Grid.Column="2"  Grid.Row="3" Margin="60,29,51,28"/>
         <Button x:Name="UpdateAddressButton" Content="Update Address"  Grid.Row="3" Margin="65,29,46,28" Grid.Column="1"/>
         <!--Second Row-->
