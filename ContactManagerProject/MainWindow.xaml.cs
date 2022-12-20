@@ -56,7 +56,8 @@ namespace ContactManagerProject
         {
             AddContact addContact = new AddContact();
             Visibility = Visibility.Collapsed;
-            addContact.Show();
+            this.Close();
+            addContact.ShowDialog();
         }
     }
 }
