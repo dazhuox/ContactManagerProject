@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactManagerProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="2532" Width="1170">
+        Title="MainWindow" Height="844" Width="390">
     <Grid Background="LightGreen">
 
         <Button x:Name="AddContact" HorizontalAlignment="Left" Margin="996,43,0,0" VerticalAlignment="Top" Height="123" Width="126" Click="AddContactDoubleClick" Content="+" RenderTransformOrigin="1.576,19.858" FontSize="40"/>
