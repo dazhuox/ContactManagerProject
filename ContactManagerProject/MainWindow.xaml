@@ -35,7 +35,9 @@
             </DataGrid.Columns>
         </DataGrid>
 
+
         <TextBox x:Name="ContactsCount" Margin="0,769,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Height="59" RenderTransformOrigin="0.5,0.5" FontSize="15"/>
+        <Button Content="Get CSV File" HorizontalAlignment="Center" Margin="0,706,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.928,5.062" Height="39" Width="98" Click="btnExport_Click"/>
 
     </Grid>
 </Window>
