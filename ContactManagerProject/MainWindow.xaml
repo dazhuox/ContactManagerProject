@@ -10,10 +10,13 @@
     <Grid Background="LightBlue">
 
         <!--First Row-->
-        <TextBox x:Name="Title" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Width="370" Height="76"  FontSize="50" Background="AliceBlue"/>
-
+        <TextBox x:Name="Title" HorizontalAlignment="Right" Margin="0,10,154,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Width="230" Height="75"  FontSize="50" Background="AliceBlue"/>
+        <Button x:Name="AddContact" Content="+" Margin="305,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Width="75" Click="AddContactDoubleClick" FontSize="30" Background="LightBlue" BorderThickness="0.5" Foreground="AliceBlue"/>
         <!--Second Row-->
-        <!--
+
+
+        <!-- Image!  Image! Image! Image! Image! Image!
+        
         <Ellipse x:Name="OwnPfp" HorizontalAlignment="Left" Margin="10,104,0,0" Stroke="Black" VerticalAlignment="Top" Width="75" Height="75">
             <Ellipse.Fill>
                 <ImageBrush ImageSource="image.png"/>
@@ -23,11 +26,6 @@
 
         <TextBox x:Name="OwnProfile" HorizontalAlignment="Left" Margin="98,107,0,0" TextWrapping="Wrap" Text="My profile" VerticalAlignment="Top" Width="266" Height="69"  FontSize="40"/>
 
-        <Button x:Name="AddContact" HorizontalAlignment="Left" Margin="996,43,0,0" VerticalAlignment="Top" Height="123" Width="126" Click="AddContactDoubleClick" Content="+" RenderTransformOrigin="1.576,19.858" FontSize="25"/>
-        <Button x:Name="DeleteContact" HorizontalAlignment="Left" Margin="972,576,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Delete Contact"/>
-        <Button x:Name="UpdateContact" HorizontalAlignment="Left" Margin="828,576,0,0" VerticalAlignment="Top" Height="35" Width="92"  Content="Update Contact"/>
-        <TextBox x:Name="ContactsCount" HorizontalAlignment="Left" Margin="138,2422,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Width="808" Height="71"  FontSize="45"/>
-
         <DataGrid x:Name="ContactList" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" Width="348" Height="394" AutoGenerateColumns="False" MouseDoubleClick="ContactList_MouseDoubleClick" SelectionChanged="ContactList_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Salutation}" Header="Salutation"/>
@@ -36,8 +34,8 @@
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Get CSV File" HorizontalAlignment="Center" Margin="0,769,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.928,5.062" Height="39" Width="98" Click="btnExport_Click"/>
 
+        <TextBox x:Name="ContactsCount" HorizontalAlignment="Center" Margin="0,769,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Width="390" Height="59" RenderTransformOrigin="0.5,0.5" FontSize="15"/>
 
     </Grid>
 </Window>
