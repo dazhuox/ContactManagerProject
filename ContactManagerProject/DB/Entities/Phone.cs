@@ -11,7 +11,7 @@ namespace ContactManagerProject
 {
     internal class Phone
     {
-        public Phone(int id, int number, DateTime createDateTime, DateTime updateDateTime)
+        public Phone(int id, string number, DateTime createDateTime, DateTime updateDateTime)
         {
             this.id = id;
             Number = number;
@@ -19,7 +19,7 @@ namespace ContactManagerProject
             UpdateDateTime = updateDateTime;
         }
 
-        public Phone(int id, int number, DateTime createDateTime, DateTime updateDateTime, Contact contact, Type type)
+        public Phone(int id, string number, DateTime createDateTime, DateTime updateDateTime, Contact contact, Type type)
         {
             this.id = id;
             Number = number;
@@ -30,7 +30,7 @@ namespace ContactManagerProject
         }
 
         public int id { get; set; }
-        public int Number { get; set; }
+        public string Number { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
         public Contact Contact

@@ -160,7 +160,7 @@ namespace ContactManagerProject.DB
                 {
                     reader.Read();
 
-                    Phone phone = new Phone((int)reader["ID"], (int)reader["Number"],
+                    Phone phone = new Phone((int)reader["ID"], (string)reader["Number"],
                         (DateTime)reader["CreateDateTime"], (DateTime)reader["UpdateDateTime"]);
 
                     reader.Close();
@@ -189,7 +189,7 @@ namespace ContactManagerProject.DB
                     List<Phone> phones = new List<Phone>();
                     while (reader.Read())
                     {
-                        phones.Add(new Phone((int)reader["ID"], (int)reader["Number"],
+                        phones.Add(new Phone((int)reader["ID"], (string)reader["Number"],
                         (DateTime)reader["CreateDateTime"], (DateTime)reader["UpdateDateTime"]));
                     }
 
