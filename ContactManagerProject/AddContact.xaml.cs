@@ -25,6 +25,13 @@ namespace ContactManagerProject
             InitializeComponent();
         }
 
+        internal AddContact(Contact selectedContact)
+        {
+            contact = selectedContact;
+        }
+
+        internal Contact contact { get; }
+
         private void AddAddressButton_Click(object sender, RoutedEventArgs e)
         {
 
