@@ -6,35 +6,47 @@ namespace ContactManagerProject
 {
     internal class Email
     {
-        public int id { get; }
-        public string EmailAddress { get; set; }
-
-
-        public static DataTable FindForContact(int contactId)
+        public Email(int id, string emailAddress)
         {
-            //Run sql to select id (looking through the sql query for the id)
-            using (SqlConnection connection = ((App)Application.Current).connection)
-            {
-                SqlCommand command = new SqlCommand("SELECT Email.Contact_ID, Email.ID, Email.EmailAddress, " +
-                    "Type.Description FROM Email " +
-                    "JOIN Type ON Email.Type = Type.Code " +
-                    "WHERE Email.Contact_ID = @id ;", connection);
-
-                command.Parameters.AddWithValue("@id", contactId);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                DataTable dataTable = new DataTable("Emails");
-
-                adapter.Fill(dataTable);
-
-                adapter.Update(dataTable);
-
-                return dataTable;
-
-            }
-
-
+            this.id = id;
+            EmailAddress = emailAddress;
         }
+
+        public Email(int id, string emailAddress, Contact contact, Type type)
+        {
+            this.id = id;
+            EmailAddress = emailAddress;
+            Contact = contact;
+            Type = type;
+        }
+
+        public int id { get; set; }
+        public string EmailAddress { get; set; }
+        public Contact Contact
+        {
+            get
+            {
+                return DB.DB.GetContact(_contactID);
+            }
+            set
+            {
+                _contactID = value.id;
+            }
+        }
+        public Type Type
+        {
+            get
+            {
+
+                return DB.DB.GetType(_type);
+            }
+            set
+            {
+                _type = value.Code;
+            }
+        }
+
+        private int _contactID;
+        private char _type;
     }
 }

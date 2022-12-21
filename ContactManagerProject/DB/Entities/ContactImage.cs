@@ -8,12 +8,14 @@ namespace ContactManagerProject
 {
     internal class ContactImage
     {
+        public ContactImage(int id, byte[] image)
+        {
+            this.id = id;
+            Image = image;
+        }
         public int id { get; }
         public byte[] Image { get; set; }
-
-        public ContactImage()
-        {
-
-        }
     }
 }
+
+

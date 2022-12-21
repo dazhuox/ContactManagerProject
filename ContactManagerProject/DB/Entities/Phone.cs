@@ -11,36 +11,53 @@ namespace ContactManagerProject
 {
     internal class Phone
     {
-        public int id { get; }
+        public Phone(int id, int number, DateTime createDateTime, DateTime updateDateTime)
+        {
+            this.id = id;
+            Number = number;
+            CreateDateTime = createDateTime;
+            UpdateDateTime = updateDateTime;
+        }
+
+        public Phone(int id, int number, DateTime createDateTime, DateTime updateDateTime, Contact contact, Type type)
+        {
+            this.id = id;
+            Number = number;
+            CreateDateTime = createDateTime;
+            UpdateDateTime = updateDateTime;
+            Contact = contact;
+            Type = type;
+        }
+
+        public int id { get; set; }
         public int Number { get; set; }
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
-
-        public static DataTable FindForContact(int contactId)
+        public Contact Contact
         {
-            //Run sql to select id (looking through the sql query for the id)
-            using (SqlConnection connection = ((App)Application.Current).connection)
+            get
             {
-                SqlCommand command = new SqlCommand("SELECT Phone.Contact_ID, Phone.ID, Phone.Number, Type.Description " +
-                    "FROM Phone " +
-                    "JOIN Type ON Phone.Type = Type.Code  " +
-                    "WHERE Phone.Contact_ID = @id ;", connection);
-
-                command.Parameters.AddWithValue("@id", contactId);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-                DataTable dataTable = new DataTable("Phones");
-
-                adapter.Fill(dataTable);
-
-                adapter.Update(dataTable);
-
-                return dataTable;
-
+                return DB.DB.GetContact(_contactID);
             }
-
-
+            set
+            {
+                _contactID = value.id;
+            }
         }
+        public Type Type
+        {
+            get
+            {
+
+                return DB.DB.GetType(_type);
+            }
+            set
+            {
+                _type = value.Code;
+            }
+        }
+
+        private int _contactID;
+        private char _type;
     }
 }

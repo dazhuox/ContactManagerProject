@@ -78,6 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DB\DB.cs" />
     <Compile Include="DB\Entities\Address.cs" />
     <Compile Include="DB\Entities\Contact.cs" />
     <Compile Include="DB\Entities\ContactImage.cs" />

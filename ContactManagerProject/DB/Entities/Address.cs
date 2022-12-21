@@ -11,38 +11,55 @@ namespace ContactManagerProject
 {
     internal class Address
     {
-        public int id { get; }
+        public Address(int id, string country, string city, string street, string addressNumber)
+        {
+            this.id = id;
+            Country = country;
+            City = city;
+            Street = street;
+            AddressNumber = addressNumber;
+        }
+
+        public Address(int id, string country, string city, string street, string addressNumber, Contact contact, Type type)
+        {
+            this.id = id;
+            Country = country;
+            City = city;
+            Street = street;
+            AddressNumber = addressNumber;
+            Contact = contact;
+            Type = type;
+        }
+
+        public int id { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public string AddressNumber { get; set; }
-
-        public static DataTable FindForContact(int contactId)
-        {
-            //Run sql to select id (looking through the sql query for the id)
-            using (SqlConnection connection = ((App)Application.Current).connection)
+        public Contact Contact {
+            get 
             {
-                SqlCommand findAddressID = new SqlCommand("SELECT Address.Contact_ID, Address.ID, Address.Country, Address.City, Address.Street, Address.AddressNumber, Type.Description " +
-                    "FROM Address" +
-                    " JOIN Type ON Address.Type = Type.Code " +
-                    "WHERE Address.Contact_ID = @id;", connection);
-
-                findAddressID.Parameters.AddWithValue("@id", contactId);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(findAddressID);
-
-                DataTable dataTable = new DataTable("Addresses");
-
-                adapter.Fill(dataTable);
-
-                adapter.Update(dataTable);
-
-                return dataTable;
-
+                return DB.DB.GetContact(_contactID);
             }
+            set
+            {
+                _contactID = value.id;
+            }
+        }
+        public Type Type
+        {
+            get
+            {
 
-
+                return DB.DB.GetType(_type);
+            }
+            set
+            {
+                _type = value.Code;
+            }
         }
 
+        private int _contactID;
+        private char _type;
     }
 }
