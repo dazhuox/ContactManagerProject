@@ -63,10 +63,9 @@ namespace ContactManagerProject
         private void ContactList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (ContactList.SelectedItem == null) return;
-            DataRowView SelectedContact = ContactList.SelectedItem as DataRowView;
-            int? contactID = SelectedContact.Row["ID"] as int?;
+            Contact SelectedContact = ContactList.SelectedItem as Contact;
 
-            AddContact addContact = new AddContact();
+            AddContact addContact = new AddContact(SelectedContact);
             addContact.ShowDialog();
         }
 
