@@ -23,6 +23,11 @@ namespace ContactManagerProject
         public AddContact()
         {
             InitializeComponent();
+
+            contact = new Contact("First Name" , "Middle Name", "Last Name", "Salutation");
+
+            DataContext = this.contact;
+
         }
 
         internal AddContact(Contact selectedContact)
@@ -30,6 +35,9 @@ namespace ContactManagerProject
             contact = selectedContact;
 
             InitializeComponent();
+
+            DataContext = this.contact;
+
         }
 
         internal Contact contact { get; }
@@ -48,6 +56,5 @@ namespace ContactManagerProject
         {
             this.Close();
         }
-
     }
 }
