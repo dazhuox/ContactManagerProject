@@ -56,5 +56,12 @@ namespace ContactManagerProject
         {
             this.Close();
         }
+
+        private void Company_update_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+
     }
 }

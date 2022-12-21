@@ -56,7 +56,11 @@
         <TextBox x:Name="FirstName_update"  TextWrapping="Wrap" Text="{Binding Path=FirstName}" Grid.Row="5" Grid.ColumnSpan="3" Grid.RowSpan="1" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
         <TextBox x:Name="MiddleName_update" TextWrapping="Wrap" Text="{Binding Path=MiddleName}" Grid.ColumnSpan="3" Grid.Row="6" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
         <TextBox x:Name="LastName_update" TextWrapping="Wrap" Text="{Binding Path=LastName}" VerticalAlignment="Bottom" Grid.Row="7" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
-        <TextBox x:Name="Company_update" TextWrapping="Wrap" Text="Company" VerticalAlignment="Bottom" Grid.Row="8" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
+        <TextBox x:Name="Company_update" TextWrapping="Wrap" Text="Company" VerticalAlignment="Bottom" Grid.Row="8" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue" TextChanged="Company_update_TextChanged"/>
+        
+        
+        
+        
 
         <!--Numbers rows-->
         <TextBox x:Name="PhoneNumber_update" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Bottom" Grid.Row="10" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>

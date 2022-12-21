@@ -222,6 +222,11 @@ namespace ContactManagerProject
 
             }
         }
+
+        private void Title_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 

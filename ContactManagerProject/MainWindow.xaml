@@ -10,8 +10,8 @@
     <Grid Background="LightBlue">
 
         <!--First Row-->
-        <TextBox x:Name="Title" HorizontalAlignment="Right" Margin="0,10,154,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Width="230" Height="75"  FontSize="50" Background="AliceBlue"/>
-        <Button x:Name="AddContact" Content="+" Margin="305,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="75" Width="75" Click="AddContactDoubleClick" FontSize="30" Background="LightBlue" BorderThickness="0.5" Foreground="AliceBlue"/>
+        <TextBox x:Name="Title" Margin="6,10,0,0" TextWrapping="Wrap" Text="Contacts" VerticalAlignment="Top" Height="75"  FontSize="50" Background="AliceBlue" TextChanged="Title_TextChanged" HorizontalAlignment="Left" Width="230"/>
+        <Button x:Name="AddContact" Content="+" Margin="0,10,10,0" VerticalAlignment="Top" Height="75" Click="AddContactDoubleClick" FontSize="30" Background="LightBlue" BorderThickness="0.5" Foreground="AliceBlue" HorizontalAlignment="Right" Width="75"/>
         <!--Second Row-->
 
 
@@ -24,9 +24,9 @@
         </Ellipse> 
         -->
 
-        <TextBox x:Name="OwnProfile" HorizontalAlignment="Left" Margin="98,107,0,0" TextWrapping="Wrap" Text="My profile" VerticalAlignment="Top" Width="266" Height="69"  FontSize="40"/>
+        <TextBox x:Name="OwnProfile" Margin="98,107,26,0" TextWrapping="Wrap" Text="My profile" VerticalAlignment="Top" Height="69"  FontSize="40"/>
 
-        <DataGrid x:Name="ContactList" HorizontalAlignment="Center" Margin="0,284,0,0" VerticalAlignment="Top" Width="348" Height="394" AutoGenerateColumns="False" MouseDoubleClick="ContactList_MouseDoubleClick" SelectionChanged="ContactList_SelectionChanged">
+        <DataGrid x:Name="ContactList" Margin="21,284,21,0" VerticalAlignment="Top" Height="394" AutoGenerateColumns="False" MouseDoubleClick="ContactList_MouseDoubleClick" SelectionChanged="ContactList_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Salutation}" Header="Salutation"/>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name"/>
@@ -35,7 +35,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBox x:Name="ContactsCount" HorizontalAlignment="Center" Margin="0,769,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Width="390" Height="59" RenderTransformOrigin="0.5,0.5" FontSize="15"/>
+        <TextBox x:Name="ContactsCount" Margin="0,769,0,0" TextWrapping="Wrap" Text="x number of Contacts" VerticalAlignment="Top" Height="59" RenderTransformOrigin="0.5,0.5" FontSize="15"/>
 
     </Grid>
 </Window>
