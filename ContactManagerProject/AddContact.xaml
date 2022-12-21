@@ -63,7 +63,7 @@
         
 
         <!--Numbers rows-->
-        <TextBox x:Name="PhoneNumber_update" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Bottom" Grid.Row="10" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
+        <TextBox x:Name="PhoneNumber_update" TextWrapping="Wrap" Text="{Binding Path=Phones[0].Number}" VerticalAlignment="Bottom" Grid.Row="10" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
         <TextBox x:Name="HomeNumber_update" TextWrapping="Wrap" Text="Home Number" VerticalAlignment="Bottom" Grid.Row="11" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
         <TextBox x:Name="WorkNumber_update" TextWrapping="Wrap" Text="Work Number" VerticalAlignment="Bottom" Grid.Row="12" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
 
@@ -103,7 +103,7 @@
 
         <TextBox x:Name="SalutationText_update" TextWrapping="Wrap" Text="Salutation" VerticalAlignment="Bottom" Grid.Row="27" Grid.Column="0" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="AliceBlue"/>
 
-        <Button x:Name="DeleteContact" Content="Delete Contact" Grid.Row="29" Grid.Column="0" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="WhiteSmoke"/>
+        <Button x:Name="DeleteContact" Content="Delete Contact" Grid.Row="29" Grid.Column="0" Height="28" Grid.ColumnSpan="3" FontSize="12" FontWeight="Light" Background="WhiteSmoke" Click="DeleteContact_Click"/>
 
     </Grid>
 </Window>

@@ -26,6 +26,10 @@ namespace ContactManagerProject
 
             contact = new Contact("First Name" , "Middle Name", "Last Name", "Salutation");
 
+            phone = new Phone("Phone Number");
+
+            contact.Phones.Add(phone);
+
             DataContext = this.contact;
 
         }
@@ -40,7 +44,11 @@ namespace ContactManagerProject
 
         }
 
-        internal Contact contact { get; }
+        internal Contact contact { get; set; }
+
+        internal Phone phone { get; set; }
+
+        internal Email email { get; set; }  
 
         private void AddAddressButton_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +62,12 @@ namespace ContactManagerProject
 
         private void UpdateCancel_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void DeleteContact_Click(object sender, RoutedEventArgs e)
+        {
+            DB.DB.DeleteContac(contact);
             this.Close();
         }
 

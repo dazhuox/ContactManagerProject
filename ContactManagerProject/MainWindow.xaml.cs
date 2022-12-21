@@ -68,6 +68,8 @@ namespace ContactManagerProject
 
             AddContact addContact = new AddContact(SelectedContact);
             addContact.ShowDialog();
+
+            Contacts = DB.DB.GetContacts();
         }
 
         private void ContactList_SelectionChanged(object sender, SelectionChangedEventArgs e)

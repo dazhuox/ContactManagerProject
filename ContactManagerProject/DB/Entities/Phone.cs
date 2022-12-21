@@ -29,6 +29,11 @@ namespace ContactManagerProject
             Type = type;
         }
 
+        public Phone(string number)
+        {
+            Number = number;
+        }
+
         public int id { get; set; }
         public string Number { get; set; }
         public DateTime CreateDateTime { get; set; }

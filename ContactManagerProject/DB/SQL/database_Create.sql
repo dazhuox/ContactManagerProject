@@ -189,7 +189,7 @@ GO
 ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_Address_Address] FOREIGN KEY([Contact_ID])
 REFERENCES [dbo].[Contact] ([ID])
 GO
-ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_Address_Address]
+ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_Address_Address] ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_Address_Type] FOREIGN KEY([Type])
 REFERENCES [dbo].[Type] ([Code])
@@ -199,12 +199,12 @@ GO
 ALTER TABLE [dbo].[Contact]  WITH CHECK ADD  CONSTRAINT [FK_Contact_ContactImage] FOREIGN KEY([ContactImage_ID])
 REFERENCES [dbo].[ContactImage] ([ID])
 GO
-ALTER TABLE [dbo].[Contact] CHECK CONSTRAINT [FK_Contact_ContactImage]
+ALTER TABLE [dbo].[Contact] CHECK CONSTRAINT [FK_Contact_ContactImage] ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Email]  WITH CHECK ADD  CONSTRAINT [FK_Email_Contact] FOREIGN KEY([Contact_ID])
 REFERENCES [dbo].[Contact] ([ID])
 GO
-ALTER TABLE [dbo].[Email] CHECK CONSTRAINT [FK_Email_Contact]
+ALTER TABLE [dbo].[Email] CHECK CONSTRAINT [FK_Email_Contact]  ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Email]  WITH CHECK ADD  CONSTRAINT [FK_Email_Type] FOREIGN KEY([Type])
 REFERENCES [dbo].[Type] ([Code])
@@ -214,7 +214,7 @@ GO
 ALTER TABLE [dbo].[Phone]  WITH CHECK ADD  CONSTRAINT [FK_Phone_Contact] FOREIGN KEY([Contact_ID])
 REFERENCES [dbo].[Contact] ([ID])
 GO
-ALTER TABLE [dbo].[Phone] CHECK CONSTRAINT [FK_Phone_Contact]
+ALTER TABLE [dbo].[Phone] CHECK CONSTRAINT [FK_Phone_Contact] ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Phone]  WITH CHECK ADD  CONSTRAINT [FK_Phone_Type] FOREIGN KEY([Type])
 REFERENCES [dbo].[Type] ([Code])
