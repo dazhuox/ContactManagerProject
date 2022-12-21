@@ -24,19 +24,19 @@ namespace ContactManagerProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public DataView Contacts { get; set; }
+        internal List<Contact> Contacts { get; set; }
         public MainWindow()
         {
 
             // This shows the window.
             InitializeComponent();
 
-            Contacts = Contact.All().AsDataView();
+            Contacts = DB.DB.GetContacts();
 
             ContactList.ItemsSource = Contacts;
 
         }
-        
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
