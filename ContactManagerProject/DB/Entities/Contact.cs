@@ -11,6 +11,18 @@ namespace ContactManagerProject
 {
     internal class Contact
     {
+        public Contact()
+        {
+        }
+
+        public Contact(string firstName, string middleName, string lastName, string salutation)
+        {
+            FirstName = firstName;
+            MiddleName = middleName;
+            LastName = lastName;
+            Salutation = salutation;
+        }
+
         public Contact(int id, string firstName, string middleName, string lastName, string salutation, DateTime createDateTime, DateTime updateDateTime)
         {
             this.id = id;
