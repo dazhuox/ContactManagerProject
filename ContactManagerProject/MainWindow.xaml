@@ -25,6 +25,7 @@
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Get CSV File" HorizontalAlignment="Center" Margin="0,769,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.928,5.062" Height="39" Width="98" Click="btnExport_Click"/>
 
 
     </Grid>

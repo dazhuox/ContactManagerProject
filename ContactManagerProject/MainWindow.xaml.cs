@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -73,5 +74,49 @@ namespace ContactManagerProject
         {
 
         }
+
+        private void btnExport_Click(object sender, RoutedEventArgs e)
+        {
+            //connection
+            string connectionString = "Server=localhost;Database=dotNetProject;Trusted_Connection=True;";
+            string queryString = "SELECT ID, ContactImage_ID, FirstName, MiddleName, LastName, Salutation, CreateDateTime, UpdateDateTime FROM CONTACT"; //add other tables
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(queryString, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                //load data
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+
+                //StringBuilder to get it all together(CSV)
+                StringBuilder sb = new StringBuilder();
+
+                //Add column names
+                string[] columnNames = new String[] { "ID", "ContactImage_ID", "FirstName", "MiddleName", "LastName", "Salutation", "CreateDateTime", "UpdateDateTime" };
+                sb.AppendLine(string.Join(",", columnNames));
+
+                //Add Rows
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string[] fields = row.ItemArray.Select(field => field.ToString()).ToArray();
+                    sb.AppendLine(string.Join(",", fields));
+
+                }
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "CSV File|*.csv";
+                saveFileDialog.Title = "Save CSV File";
+                saveFileDialog.ShowDialog();
+
+                // Write the CSV data to the selected file
+                System.IO.File.WriteAllText(saveFileDialog.FileName, sb.ToString());
+
+            }
+        }
     }
 }
+
