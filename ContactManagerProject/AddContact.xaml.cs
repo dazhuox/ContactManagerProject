@@ -28,6 +28,8 @@ namespace ContactManagerProject
         internal AddContact(Contact selectedContact)
         {
             contact = selectedContact;
+
+            InitializeComponent();
         }
 
         internal Contact contact { get; }
